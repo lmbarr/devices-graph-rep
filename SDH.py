@@ -29,6 +29,7 @@ def process(sheet_obj, sheet_name):
     plt.figure(3, figsize=(50, 50))
     nx.draw_networkx(G, arrowsize=6, with_labels=True, node_size=10, font_size=5)
     plt.savefig(sheet_name + ".pdf")
+    plt.clf()
 
 
 def main():
