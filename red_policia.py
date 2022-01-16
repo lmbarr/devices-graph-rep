@@ -8,10 +8,10 @@ def process(sheet_obj, subnet):
 
     # Will print a particular row value
 
-    for j in range(9, sheet_obj.max_row + 1):
-        source = sheet_obj.cell(row=j, column=6)
-        target = sheet_obj.cell(row=j, column=8)
-        subnet_read = sheet_obj.cell(row=j, column=23)
+    for j in range(2, sheet_obj.max_row + 1):
+        source = sheet_obj.cell(row=j, column=2)
+        target = sheet_obj.cell(row=j, column=3)
+        subnet_read = sheet_obj.cell(row=j, column=1)
 
         if subnet == subnet_read.value:
 
@@ -35,11 +35,11 @@ def process(sheet_obj, subnet):
 
 
 def main():
-    loc = 'Cable_Connection_Report_2021-12-01_17-42-09 dwdm_only_wdm_no_repeated_rows_with_subnet.xlsx'
+    loc = 'ENLACES MW SIAE.xlsx'
     wb_obj = openpyxl.load_workbook(loc)
 
     subnet_list = set()
-    for cell in wb_obj.active['W']:
+    for cell in wb_obj.active['A']:
         if cell.value and cell.value != '':
             subnet_list.add(cell.value)
     
